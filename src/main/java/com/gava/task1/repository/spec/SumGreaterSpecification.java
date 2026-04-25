@@ -14,8 +14,7 @@ public class SumGreaterSpecification implements Predicate<CustomArray> {
   @Override
   public boolean test(CustomArray customArray) {
     ArrayWarehouse warehouse = ArrayWarehouse.getInstance();
-    int currentSum = warehouse.get(customArray.getId()).getSum();
+    int currentSum = warehouse.get(customArray.getId()).sum();
     return currentSum > treshold;
   }
-  //TODO more
 }
