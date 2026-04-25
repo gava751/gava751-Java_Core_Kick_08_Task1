@@ -9,7 +9,7 @@ import org.apache.logging.log4j.Logger;
 public class ArrayWarehouse {
   public static ArrayWarehouse instance;
   private static Logger logger = LogManager.getLogger();
-  private final Map<String, ArrayStatistics> map = new HashMap<>();
+  private final Map<Long, ArrayStatistics> map = new HashMap<>();
 
   private ArrayWarehouse() {}
 
@@ -21,12 +21,12 @@ public class ArrayWarehouse {
   }
 
   public void put(long id, ArrayStatistics statistics) {
-    map.put(String.valueOf(id), statistics);
+    map.put(id, statistics);
     logger.info("Statistics saved/updated in Warehouse for array id: {}", id);
   }
 
   public ArrayStatistics get(long id) {
     logger.info("Fetching statistics from Warehouse for array id: {}", id);
-    return map.get(String.valueOf(id));
+    return map.get(id);
   }
 }

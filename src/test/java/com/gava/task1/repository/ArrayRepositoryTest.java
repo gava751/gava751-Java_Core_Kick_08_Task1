@@ -15,6 +15,6 @@ public class ArrayRepositoryTest {
     List<CustomArray> actualList = arrayRepository.queryArrays(array -> array.getId() == 400L);
     Assertions.assertAll(
         () -> Assertions.assertFalse(actualList.isEmpty()),
-        () -> Assertions.assertEquals(400L, actualList.get(0).getId()));
+        () -> Assertions.assertEquals(400L, actualList.getFirst().getId()));
   }
 }

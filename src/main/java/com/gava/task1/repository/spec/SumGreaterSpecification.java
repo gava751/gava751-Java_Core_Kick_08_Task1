@@ -17,4 +17,5 @@ public class SumGreaterSpecification implements Predicate<CustomArray> {
     int currentSum = warehouse.get(customArray.getId()).getSum();
     return currentSum > treshold;
   }
+  //TODO more
 }

@@ -18,6 +18,6 @@ public class ArrayObserverTest {
     ArrayStatistics actualStats = warehouse.get(200L);
     Assertions.assertAll(
         () -> Assertions.assertNotNull(actualStats),
-        () -> Assertions.assertEquals(60, actualStats.getSum()));
+        () -> Assertions.assertEquals(60, actualStats.sum()));
   }
 }

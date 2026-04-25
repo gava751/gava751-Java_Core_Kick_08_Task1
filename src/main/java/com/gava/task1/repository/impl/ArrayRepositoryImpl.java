@@ -37,6 +37,16 @@ public class ArrayRepositoryImpl implements ArrayRepository {
     logger.info("{} remove array", id);
   }
 
+  public List<CustomArray> querrySycleArrays(Predicate<CustomArray> predicate) {
+    List<CustomArray> result = new ArrayList<>();
+    for (CustomArray customArray : arrays) {
+      if (predicate.test(customArray)) {
+        result.add(customArray);
+      }
+    }
+    return result;
+  }
+
   @Override
   public List<CustomArray> queryArrays(Predicate<CustomArray> predicate) {
     logger.debug("Query arrays");
